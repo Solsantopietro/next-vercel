@@ -5,6 +5,7 @@ import { FC } from 'react'
 
 interface Props {
     title?: string;
+    text?: string;
     children?: JSX.Element | JSX.Element[];
   }
 

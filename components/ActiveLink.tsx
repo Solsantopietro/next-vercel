@@ -8,14 +8,14 @@ const style:CSSProperties = {
 
 interface Props {
     children?: JSX.Element | JSX.Element[];
-    text: string,
-    href: string,
+    text: string | JSX.Element;
+    href: string;
   }
 
-export const ActiveLink: FC<Props> = (props) => {
+export const ActiveLink: FC<Props> = ({href, text}) => {
     const { asPath } = useRouter()
     
     return (
-        <a style={asPath == props.href ? style : undefined} href={props.href}>{props.text}</a>
+        <a style={asPath == href ? style : undefined} href={href}>{text}</a>
     )
 }
